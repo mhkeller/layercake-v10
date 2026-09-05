@@ -1,9 +1,19 @@
 Layer Cake  [<img src="https://raw.githubusercontent.com/mhkeller/layercake.graphics/main/static/layercake-logo-500x400.png" width="115" align="right" alt="layercake-logo">](https://mhkeller.github.io/layercake)
 ===
 
-> a headless visualization framework for mostly-reusable graphics with [svelte](https://github.com/sveltejs/svelte)
+# 🚨 ARCHIVED REPOSITORY 🚨
 
-[![Tests badges](https://github.com/mhkeller/layercake/actions/workflows/node.js.yml/badge.svg)](https://github.com/mhkeller/layercake/actions/workflows/node.js.yml) [![npm version](https://img.shields.io/npm/v/layercake.svg)](https://npmjs.org/package/layercake) [![npm](https://img.shields.io/npm/dm/layercake.svg)](https://www.npmjs.com/package/layercake)
+## This repository contains v10 LayerCake documentation and is no longer actively maintained.
+
+### For the latest Layer Cake documentation and updates, please visit:
+- **📖 [layercake.graphics](https://layercake.graphics)** - Official documentation site
+- **🔗 [github.com/mhkeller/layercake](https://github.com/mhkeller/layercake)** - Main repository
+
+### To view this archived documentation, please visit:
+- **🔗 [mhkeller.github.io/layercake-v10](https://mhkeller.github.io/layercake-v10)** - Archived documentation website.
+
+
+> a headless visualization framework for mostly-reusable graphics with [svelte](https://github.com/sveltejs/svelte)
 
  🍰 [See examples](https://layercake.graphics)
  🍰 [Read the guide](https://layercake.graphics/guide)
