@@ -5,7 +5,7 @@ on:
 
 jobs:
   deploy:
-    if: github.repository == 'mhkeller/layercake'
+    if: github.repository == 'mhkeller/layercake-v10'
     runs-on: ubuntu-latest
 
     permissions:
@@ -35,6 +35,8 @@ jobs:
 
       - name: Build
         run: pnpm build
+        env:
+          BASE_PATH: /layercake-v10
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

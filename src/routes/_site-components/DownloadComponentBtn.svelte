@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import { toAuto } from 'do-not-zip';
 	import { uniques } from 'layercake';
 
@@ -54,7 +55,8 @@
 	onclick={download}
 	title="download zip file"
 	class="icon"
-	style="background-image: url(/icons/download.svg)">Download &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button
+	style="background-image: url({base}/icons/download.svg)"
+	>Download &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button
 >
 
 <style>

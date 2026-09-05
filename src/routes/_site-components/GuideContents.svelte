@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	/**
 	 * @typedef {import('../../_modules/getSections.js').GuideSection} GuideSection
 	 */
@@ -30,13 +31,13 @@
 		<li>
 			<a
 				class="section {section.slug === activeGuideSection ? 'active' : ''}"
-				href="/guide#{section.slug}"
+				href="{base}/guide#{section.slug}"
 				onclick={close}>{section.metadata.title}</a
 			>
 			{#each section.subsections as subsection}
 				<a
 					class="subsection {subsection.slug === activeGuideSection ? 'active' : ''}"
-					href="/guide#{subsection.slug}"
+					href="{base}/guide#{subsection.slug}"
 					onclick={close}>{subsection.title}</a
 				>
 			{/each}

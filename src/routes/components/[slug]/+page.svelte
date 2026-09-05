@@ -1,5 +1,7 @@
 <script>
+	import { base } from '$app/paths';
 	import MarkdownIt from 'markdown-it';
+	import withBase from '../../../_modules/withBase.js';
 
 	import CopyBtn from '../../_site-components/CopyBtn.svelte';
 	import DownloadComponentBtn from '../../_site-components/DownloadComponentBtn.svelte';
@@ -33,7 +35,7 @@
 	 * @returns {string} The converted HTML.
 	 */
 	function markdownToHtml(text) {
-		return md.render(text);
+		return withBase(md.render(text));
 	}
 
 	/**
@@ -119,7 +121,7 @@
 
 <div class="main">
 	<div class="all-components">
-		<a href="/components">← View all components</a>
+		<a href="{base}/components">← View all components</a>
 	</div>
 	<h1>{data.slug} component</h1>
 
@@ -160,7 +162,7 @@
 					{/if}
 					<ul>
 						{#each group.matches as link}
-							<li><a href={link}>{link.split('/').pop()}</a></li>
+							<li><a href="{base}{link}">{link.split('/').pop()}</a></li>
 						{/each}
 					</ul>
 				{/if}

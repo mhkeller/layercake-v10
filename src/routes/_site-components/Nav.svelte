@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { page } from '$app/state';
 
 	import GuideContents from './GuideContents.svelte';
@@ -26,7 +27,7 @@
 	/** @this {HTMLSelectElement} */
 	function loadPage() {
 		open = false;
-		goto(this.value || '/');
+		goto(this.value || `${base}/`);
 	}
 
 	function toggleOpen() {
@@ -59,28 +60,28 @@
 		onclick={toggleOpen}
 		onkeypress={toggleOpen}>{open ? 'Close' : 'Menu'}</span
 	>
-	<a href="/" class="logo">Layer Cake</a>
+	<a href="{base}/" class="logo">Layer Cake</a>
 </div>
 
 <ul class="dropdown">
 	<li>
 		<select onchange={loadPage} bind:value={segment}>
-			{#if segment.startsWith('/components')}
+			{#if segment.startsWith(`${base}/components`)}
 				<option value={segment} disabled>Select...</option>
 			{/if}
-			{#if segment.startsWith('/guide')}
+			{#if segment.startsWith(`${base}/guide`)}
 				<option value={segment} disabled>Select...</option>
 			{/if}
-			<option value="/">All</option>
+			<option value="{base}/">All</option>
 			<option class="header" disabled></option>
 			<option class="header" disabled>Client-side</option>
 			{#each examples.slice().sort((a, b) => (a.title < b.title ? -1 : 1)) as example}
-				<option value="/example/{example.slug}">{slimName(example.title)}</option>
+				<option value="{base}/example/{example.slug}">{slimName(example.title)}</option>
 			{/each}
 			<option class="header" disabled></option>
 			<option class="header" disabled>Server-side</option>
 			{#each examplesSsr.slice().sort((a, b) => (a.title < b.title ? -1 : 1)) as example}
-				<option value="/example-ssr/{example.slug}">{slimName(example.title)}</option>
+				<option value="{base}/example-ssr/{example.slug}">{slimName(example.title)}</option>
 			{/each}
 		</select>
 	</li>
@@ -90,21 +91,24 @@
 	<ul class="primary">
 		<li>
 			<a
-				class={segment === '/components' ? 'active' : ''}
-				href="/components"
+				class={segment === `${base}/components` ? 'active' : ''}
+				href="{base}/components"
 				onclick={() => (open = false)}
 				><span class="wide-name">Component gallery</span><span class="short-name">Components</span
 				></a
 			>
 		</li>
 		<li>
-			<a class={segment === '/guide' ? 'active' : ''} href="/guide" onclick={() => (open = false)}
-				>Guide</a
+			<a
+				class={segment === `${base}/guide` ? 'active' : ''}
+				href="{base}/guide"
+				onclick={() => (open = false)}>Guide</a
 			>
 		</li>
 		<li>
 			<a
 				id="github-link"
+				style="--github-logo: url({base}/github-logo.svg)"
 				target="_blank"
 				rel="noreferrer"
 				href="https://github.com/mhkeller/layercake"
@@ -288,7 +292,7 @@
 	#github-link {
 		width: 22px;
 		height: 2px;
-		background: url(/github-logo.svg);
+		background: var(--github-logo);
 		background-repeat: no-repeat;
 		position: relative;
 		top: 4px;

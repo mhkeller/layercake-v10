@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import GuideContents from '../_site-components/GuideContents.svelte';
 
 	/** @type {import('./$types').PageProps} */
@@ -65,7 +66,12 @@
 	<GuideContents sections={data.sections} bind:activeGuideSection />
 </aside>
 
-<div id="container" class="content" bind:this={container}>
+<div
+	id="container"
+	class="content"
+	style="--link-icon: url({base}/icons/link.svg)"
+	bind:this={container}
+>
 	<section id="toc">
 		<h3>Table of contents</h3>
 		<ul>
@@ -177,7 +183,7 @@
 	section :global(h3 > a) {
 		width: 25px;
 		height: 25px;
-		background-image: url(/icons/link.svg);
+		background-image: var(--link-icon);
 		background-repeat: no-repeat;
 		position: absolute;
 		transform: translate(0px, -3px);

@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import examples from './_examples.js';
 	import examplesSsr from './_examples_ssr.js';
 	import hljs from '../_modules/hljs.js';
@@ -81,19 +82,20 @@
 		</p>
 
 		<p>
-			Unlike other libraries, <a href="/components">chart components</a> live
+			Unlike other libraries, <a href="{base}/components">chart components</a> live
 			<span class="strong">inside your project</span>, so you have complete control for
 			<span class="strong">customization</span>. It also includes some handy
-			<a href="/guide#helper-functions">helper functions</a> to help format your data into the right shape.
+			<a href="{base}/guide#helper-functions">helper functions</a> to help format your data into the right
+			shape.
 		</p>
 
 		<p>
-			Read the <a href="/guide">guide</a>, try the
+			Read the <a href="{base}/guide">guide</a>, try the
 			<a href="https://github.com/mhkeller/layercake-template" target="_blank" rel="noreferrer"
 				>starter template</a
 			>
-			or check out the <a href="/components">example components</a>. See the examples below and even
-			edit them live. Here's a sample of what the code looks like:
+			or check out the <a href="{base}/components">example components</a>. See the examples below
+			and even edit them live. Here's a sample of what the code looks like:
 		</p>
 	</div>
 
@@ -106,7 +108,7 @@
 		{#each examples as example}
 			<div class="gallery-item">
 				<h4 class="title">
-					<a href="/example/{example.slug}">{example.title}</a>
+					<a href="{base}/example/{example.slug}">{example.title}</a>
 				</h4>
 				<example.component />
 			</div>
@@ -143,7 +145,7 @@
 		{#each examplesSsr as example}
 			<div class="gallery-item" class:scaled={example.title.toLowerCase().includes('map')}>
 				<h4 class="title">
-					<a href="/example-ssr/{example.slug}">{example.title}</a>
+					<a href="{base}/example-ssr/{example.slug}">{example.title}</a>
 				</h4>
 				<example.component />
 			</div>

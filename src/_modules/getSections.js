@@ -7,6 +7,7 @@ import { Marked } from 'marked';
 import hljs from './hljs.js';
 import processMarkdown from './processMarkdown.js';
 import slugify from './slugify.js';
+import withBase from './withBase.js';
 
 /** @type {Record<string, string>} */
 const escaped = {
@@ -155,7 +156,7 @@ export default function (returnHtml = true) {
 			// eventually crash.
 			const md = new Marked({ renderer });
 
-			let html = md.parse(content, { async: false });
+			let html = withBase(md.parse(content, { async: false }));
 
 			// For the sidebar, the anchor uses the title without any <code> tags.
 			// The heading itself keeps them.

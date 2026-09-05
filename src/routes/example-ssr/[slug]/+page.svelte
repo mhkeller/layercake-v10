@@ -1,5 +1,6 @@
 <script>
 	import MarkdownIt from 'markdown-it';
+	import withBase from '../../../_modules/withBase.js';
 
 	import CopyBtn from '../../_site-components/CopyBtn.svelte';
 	import DownloadBtn from '../../_site-components/DownloadBtn.svelte';
@@ -21,7 +22,7 @@
 	 * @returns {string}
 	 */
 	function markdownToHtml(text) {
-		return md.render(text);
+		return withBase(md.render(text));
 	}
 
 	/**

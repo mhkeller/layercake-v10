@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import { toAuto } from 'do-not-zip';
 	import { uniques } from 'layercake';
 
@@ -45,9 +46,9 @@
 		downloading = true;
 
 		const cacheBust = new Date().getTime();
-		const files = await (await window.fetch(`/svelte-app.json?${cacheBust}`)).json();
+		const files = await (await window.fetch(`${base}/svelte-app.json?${cacheBust}`)).json();
 		/** @type {Record<string, string>} */
-		const depsLookup = await (await window.fetch(`/deps.json?${cacheBust}`)).json();
+		const depsLookup = await (await window.fetch(`${base}/deps.json?${cacheBust}`)).json();
 		if (imports.length > 0) {
 			const idx = files.findIndex(
 				/** @param {{ path: string }} file */ ({ path }) => path === 'package.json'
@@ -137,7 +138,8 @@
 	onclick={download}
 	title="download zip file"
 	class="icon"
-	style="background-image: url(/icons/download.svg)">Download &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button
+	style="background-image: url({base}/icons/download.svg)"
+	>Download &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button
 >
 
 <style>
