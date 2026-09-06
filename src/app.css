@@ -1,3 +1,7 @@
+:root {
+	--banner-height: 40px;
+}
+
 body {
 	margin: 0;
 	font-family:
@@ -46,7 +50,7 @@ code {
 }
 
 main {
-	padding: 4em 0 0 0;
+	padding: calc(4em + var(--banner-height)) 0 0 0;
 }
 
 @media (min-width: 400px) {

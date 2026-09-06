@@ -153,6 +153,7 @@
 
 	.container {
 		position: fixed;
+		top: var(--banner-height);
 		width: 100%;
 		height: 2.5em;
 		background-color: #fff;
@@ -164,7 +165,7 @@
 
 	.dropdown {
 		position: fixed;
-		top: 21px;
+		top: calc(var(--banner-height) + 21px);
 		transform: translate(0, -50%);
 		font-family: SignPainter, Helvetica, sans-serif;
 		font-size: 25px;
@@ -190,8 +191,8 @@
 	nav {
 		position: fixed;
 		width: 14em;
-		height: calc(100vh - 2.5em);
-		top: 2.5em;
+		height: calc(100vh - var(--banner-height) - 2.5em);
+		top: calc(var(--banner-height) + 2.5em);
 		font-family: 'SignPainter', Helvetica, sans-serif;
 		background-color: white;
 		transform: translate(-100%, 0);
@@ -351,7 +352,7 @@
 		}
 
 		.dropdown {
-			top: 1rem;
+			top: calc(var(--banner-height) + 1rem);
 			left: 40%;
 			transform: translate(-50%, 0);
 			right: auto;
@@ -373,11 +374,12 @@
 			transform: none;
 			transition: none;
 			height: 0;
+			top: var(--banner-height);
 		}
 
 		.primary {
 			position: fixed;
-			top: 1rem;
+			top: calc(var(--banner-height) + 1rem);
 			right: 1.5rem;
 			margin: 0;
 		}

@@ -224,10 +224,10 @@
 	aside {
 		position: fixed;
 		background-color: #fff;
-		top: 61px;
+		top: calc(var(--banner-height) + 61px);
 		left: 0;
 		display: none;
-		height: calc(100% - (2.7em + 67px));
+		height: calc(100% - var(--banner-height) - (2.7em + 67px));
 		width: 11.75em;
 		padding: 1.18em 1em 2em 1.5em;
 		overflow-y: auto;
